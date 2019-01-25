@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java语法," />
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="下午的时候接着昨天的看，感觉 Scheme 这个语言很有魅力啊 这一节练习中要求自己写个温度转换的程序，先去 Google 温度转换公式，再把公式转换成 scheme 语句，2分钟写出来了 (define (Fahrenheit-&amp;gt;Celsius f)     (/ (- f 32) 1.8)) 测试数据和网上的在线测试一样的，证明程序是成功了，接着它让我们使用教学包中的函数再次进行测试 (">
+<meta name="description" content="字符串值无法被修改，字符串对象可以引用别的字符串 字符串变量中保存的是这个值所在的地址（相当于指针） 字符串中的 . 为 “\.” 如果用split(“.”)进行分割字符串时 要加上双反斜杠 声明一个字符串变量 String str = &amp;quot;abcd&amp;quot;; String str = new String(&amp;quot;abcd&amp;quot;); 输入一个字符串的方法是 impor ja">
+<meta name="keywords" content="Java语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="htdp">
-<meta property="og:url" content="https://github.com/Wynnfan/2019/01/25/htdp/index.html">
+<meta property="og:title" content="JavaString">
+<meta property="og:url" content="https://github.com/Wynnfan/2019/01/25/JavaString/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="下午的时候接着昨天的看，感觉 Scheme 这个语言很有魅力啊 这一节练习中要求自己写个温度转换的程序，先去 Google 温度转换公式，再把公式转换成 scheme 语句，2分钟写出来了 (define (Fahrenheit-&amp;gt;Celsius f)     (/ (- f 32) 1.8)) 测试数据和网上的在线测试一样的，证明程序是成功了，接着它让我们使用教学包中的函数再次进行测试 (">
+<meta property="og:description" content="字符串值无法被修改，字符串对象可以引用别的字符串 字符串变量中保存的是这个值所在的地址（相当于指针） 字符串中的 . 为 “\.” 如果用split(“.”)进行分割字符串时 要加上双反斜杠 声明一个字符串变量 String str = &amp;quot;abcd&amp;quot;; String str = new String(&amp;quot;abcd&amp;quot;); 输入一个字符串的方法是 impor ja">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oziq53ktw.bkt.clouddn.com/%E6%8D%95%E8%8E%B73_%E7%9C%8B%E5%9B%BE%E7%8E%8B.png">
-<meta property="og:image" content="http://oziq53ktw.bkt.clouddn.com/%E6%8D%95%E8%8E%B71.PNG">
-<meta property="og:image" content="http://oziq53ktw.bkt.clouddn.com/2.PNG">
-<meta property="og:image" content="http://oziq53ktw.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG">
-<meta property="og:updated_time" content="2019-01-25T14:53:51.329Z">
+<meta property="og:updated_time" content="2019-01-25T15:25:15.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="htdp">
-<meta name="twitter:description" content="下午的时候接着昨天的看，感觉 Scheme 这个语言很有魅力啊 这一节练习中要求自己写个温度转换的程序，先去 Google 温度转换公式，再把公式转换成 scheme 语句，2分钟写出来了 (define (Fahrenheit-&amp;gt;Celsius f)     (/ (- f 32) 1.8)) 测试数据和网上的在线测试一样的，证明程序是成功了，接着它让我们使用教学包中的函数再次进行测试 (">
-<meta name="twitter:image" content="http://oziq53ktw.bkt.clouddn.com/%E6%8D%95%E8%8E%B73_%E7%9C%8B%E5%9B%BE%E7%8E%8B.png">
+<meta name="twitter:title" content="JavaString">
+<meta name="twitter:description" content="字符串值无法被修改，字符串对象可以引用别的字符串 字符串变量中保存的是这个值所在的地址（相当于指针） 字符串中的 . 为 “\.” 如果用split(“.”)进行分割字符串时 要加上双反斜杠 声明一个字符串变量 String str = &amp;quot;abcd&amp;quot;; String str = new String(&amp;quot;abcd&amp;quot;); 输入一个字符串的方法是 impor ja">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/Wynnfan/2019/01/25/htdp/"/>
+  <link rel="canonical" href="https://github.com/Wynnfan/2019/01/25/JavaString/"/>
 
 
 
 
 
-  <title>htdp | Hexo</title>
+  <title>JavaString | Hexo</title>
   
 
 
@@ -237,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Wynnfan/2019/01/25/htdp/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wynnfan/2019/01/25/JavaString/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -254,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">htdp</h1>
+          <h1 class="post-title" itemprop="name headline">JavaString</h1>
         
 
         <div class="post-meta">
@@ -266,7 +262,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-25T22:51:50+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-25T23:24:34+08:00">
                 2019-01-25
               </time>
             
@@ -276,6 +272,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -304,111 +322,60 @@
       
 
       
-        <p>下午的时候接着昨天的看，感觉 Scheme 这个语言很有魅力啊</p>
-<p>这一节练习中要求自己写个温度转换的程序，先去 Google 温度转换公式，再把公式转换成 scheme 语句，2分钟写出来了</p>
-<pre><code>(define (Fahrenheit-&gt;Celsius f)
-    (/ (- f 32) 1.8))
-</code></pre><p>测试数据和网上的在线测试一样的，证明程序是成功了，接着它让我们使用教学包中的函数再次进行测试</p>
-<pre><code>(convert-gui Fahrenheit-&gt;Celsius)
-(convert-repl Fahrenheit-&gt;Celsius)
-(convert-file &quot;in.dat&quot; Fahrenheit-&gt;Celsius &quot;out.dat&quot;)
-</code></pre><p>第一个函数功能是Gui界面，创建一个带有按钮和滚动条的窗口；</p>
-<p><img src="http://oziq53ktw.bkt.clouddn.com/%E6%8D%95%E8%8E%B73_%E7%9C%8B%E5%9B%BE%E7%8E%8B.png" alt=""></p>
-<p>第二个函数功能是仿真一个交互式窗口，类似命令行，在里面输入数据；</p>
-<p><img src="http://oziq53ktw.bkt.clouddn.com/%E6%8D%95%E8%8E%B71.PNG" alt=""></p>
-<p>第三个函数功能是把 in.dat 这个文件里面的数值进行转换，并且把文件写到 out.dat 文件中，事先要创建 in.dat 这个文件，并写入数值，空格分隔。</p>
-<p><img src="http://oziq53ktw.bkt.clouddn.com/2.PNG" alt=""></p>
-<p><img src="http://oziq53ktw.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG" alt=""></p>
-<p>这三个数据没有空格分开，是我人工分的，挖个坑，以后埋。</p>
-<p>虽然说用了教学包，但是一行代码把一个功能写出来，更会激起新手极大的兴趣啊。</p>
-<hr>
-<p>定义程序convert3，输入三个数，代表个位、十位、百位，程序输出相应的数值</p>
-<pre><code>(define (convert3 x y z)
-  (+ x (* 10 y) (* 100 z)))
+        <p>字符串值无法被修改，字符串对象可以引用别的字符串</p>
+<p>字符串变量中保存的是这个值所在的地址（相当于指针）</p>
+<p>字符串中的 . 为 “\.” 如果用split(“.”)进行分割字符串时 要加上双反斜杠</p>
+<p>声明一个字符串变量</p>
+<pre><code>String str = &quot;abcd&quot;;
+String str = new String(&quot;abcd&quot;);
+</code></pre><p>输入一个字符串的方法是</p>
+<pre><code>impor java.util.Scanner;
 
-(convert3 1 2 3)     输出结果为321
-</code></pre><p>习题2.3.1 计算毛收入计算所得税编写程序 tax，编写 netpay，计算税后所得，假定每小时工资12美元。</p>
-<pre><code>(define (tax wege)
-  (* (/ 15.0 100) wege))
-
-(define (wege h)
-  (* 12 h))
-
-(define (netpay h)
-  (- (wege h) (tax (wege h))))
-</code></pre><p>总结：有没有发现很奇怪的地方，wege 是一个类似函数的东西，却可以作为参数传进去，这让我想起了 python，python 的所有东西都是对象，可以把函数作为参数使用（应该是这样，不对请指正）。</p>
-<hr>
-<p>编写 Scheme 程序要遵循一些规则，都是以 “（ ” 开始，接着是操作，然后是复合表达式，最后以 “ ）” 结束。<br>在笔记（一）里面我猜测 <strong>area-of-disk</strong> 为函数名，这一节就说了确实是函数名。</p>
-<p>Scheme 规定操作先于操作数出现。</p>
-<p>设计一个程序至少需要4个步骤：</p>
-<p>给每一个程序一个有意义的名字，并且说明输入数据和所产生的数据的类型，称为程序的合约。</p>
-<pre><code>;; area-of-ring : number number -&gt; number
-</code></pre><p>注释：;; 表示该行是一个注释。</p>
-<p>冒号的左边是程序的名字，右边是输入和输出的类型，输入和输出之间用箭头隔开。</p>
-<p>有了合约，就可以加入函数头部，函数头部给每个输入一个不同的名字，这些名字是变量，同时也是程序的参数。</p>
-<pre><code>;; area-of-ring : number number -&gt; number
-(define (area-of-ring outer inner) ...)
-</code></pre><p>基于合约和参数，简要阐明程序的用途。</p>
-<pre><code>;; area-of-ring : number number -&gt; number
-;; 计算一个半径为outer，洞半径为inner的圆环面积
-(define (area-of-ring outer inner) ...)
-</code></pre><p>整个程序的设计</p>
-<pre><code> ;; 合约: area-of-ring : number number -&gt; number
-;; 用途: 计算一个半径为outer，洞半径为inner的圆环面积
-;; 例子: (area-of-ring 5 3) 的计算结果为50.24
-;; 定义: [函数头部的精化]
-(define (area-of-ring outer inner) ...)
-  (- (area-of-ring outer)
-       (area-of-ring inner)))
-
-;; 测试:
-(area-of-ring 5 3)
-;; 预期值
-50.24
+Scanner s = new Scanner(System.in);
+String str = s.nextLine();
+</code></pre><h3 id="常用的一些使用字符串的方法："><a href="#常用的一些使用字符串的方法：" class="headerlink" title="常用的一些使用字符串的方法："></a>常用的一些使用字符串的方法：</h3><p>查找字串的位置的方法：</p>
+<pre><code>s.indexOf(int c); //字符
+s.indexOf(String str);
+s.lastIndexOf(String str); //最后子串出现的位置
+</code></pre><p>获取指定位置的字符：</p>
+<pre><code>s.charAt(int index);
+</code></pre><p>获取子字符串：</p>
+<pre><code>s.substring(int beginIndex);
+s.substring(int beginIndex,int endIndex);
+</code></pre><p><strong>字符串判断：</strong></p>
+<p>判断字符串的开始和结尾</p>
+<pre><code>s.startsWith(String prefix);
+s.endsWith(String suffix);
+</code></pre><p>判断字符串是否相等</p>
+<pre><code>//可以用 == 进行判断
+s.equals(String str);
+s.equalsIgnoreCase(String str); //忽略大小写
+s.compareTo(String str); //比较字符，字符不同，返回字符的差，如果前几个字符相同 (&quot;si&quot; &quot;sik&quot;) 返回长度差
+</code></pre><p>判断是否包含某个子字符串</p>
+<pre><code>s.contains(String str);
+</code></pre><p>判断字符串是否为空</p>
+<pre><code>s.isEmpty();
+</code></pre><p>空的两种状态</p>
+<pre><code>String s = &quot;&quot;;   //空字符串
+String s = null; //空对象
+</code></pre><p>字母大小写转换</p>
+<pre><code>s.toLowerCase();
+s.toUpperCase();
+</code></pre><p>字符串分割</p>
+<pre><code>s.split(String str);
+s.split(String str,int limit);
+</code></pre><p>去除空格(前面和后面的空格，不包括中间的空格)</p>
+<pre><code>s.trim();
+</code></pre><p>字符串替换</p>
+<pre><code>s.replace(char oldChar,char newChar);
+s.replace(String oldStr,String newStr);
 </code></pre><hr>
-<p>第三章 通过一个小例子对两种程序开发风格进行比较。</p>
-<p>一个影院可以定制票价，当票价5美元时，有120人观看，当票价调低了0.1美元后，增加了15人，放映一场电影支付180给供片商，每个人有4美分的开销，想知道利润与票价之间的确切关系，定下一个利润最高的票价。</p>
-<p>首先需要分析一下关系:</p>
-<p>1.利润是收入和成本之差；</p>
-<p>2.收入是票价乘以人数；</p>
-<p>3.成本是180美元加4美分乘以人数</p>
-<p>4.人数和票价的关系</p>
-<pre><code>;; profit : number -&gt; number
-;; 对于给定ticket-price，利润=收入-成本
-(define (profit ticket-price) ...)
+<p><strong>Java的产生随机数的方法</strong></p>
+<pre><code>import java.util.Random
 
-;; revenue : number -&gt; number
-;; 对于给定ricket-price，计算收入        
-(define (revenue ricket-price) ...)
-
-;; cost : number -&gt; number
-;; 对于给定ticket-price，计算支出        
-(define (cost ticket-price) ...)
-
-;; attendees : number -&gt; number
-;; 对于给定ticket-price，计算观众数        
-(define (attendees ticket-price) ...)
-</code></pre><p>接下来完善函数</p>
-<pre><code>(define (profit ticket-price)
-  (- (revenue ricket-price)                   (cost ticket-price)))
-
-(define (revenue ricket-price)
-  (* (attendees ticket-price)                   ticket-price))
-
-(define (cost ticket-price)
-  (+ 180 (* 0.4 (attendees ticket-price))))
-
-(define (attendees ticket-price)
-  (+ 120 (* (/ 15 .10) (- 5.00 ticket-price))))
-</code></pre><p>总结：对每一种关系使用一个辅助函数，会使结构更加清晰。</p>
-<hr>
-<p>变量定义：如果一个数值多次出现，要使用变量定义给它一个名字</p>
-<pre><code>(define PI 3.14)
-</code></pre><p>C 语言中有个 #define</p>
-<p>在编写规模较大的程序时，尽可能使用变量定义。<br>书中的小练习比较重复就自己练了，不写在这里。</p>
-<hr>
-<p>今天主要学习了程序设计总体流程和程序的风格，了解了一些 Scheme 的特有规则，并且学了如何注释，和多次同样数值使用，可以采取变量定义的方法。<br>这本书不是那种上来把编程语言的语法交给你，然后学完了写出来的代码还没有一定的规范。<br>HtDp真的是教如何程序设计，可惜国内没有这样的书。</p>
-
+Random r = new Random;
+int ran = r.nextInt(10); //生成一个0-9的数
+</code></pre>
       
     </div>
     
@@ -423,6 +390,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Java语法/" rel="tag"># Java语法</a>
+          
+        </div>
+      
 
       
       
@@ -432,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/26/Test/" rel="next" title="Test">
-                <i class="fa fa-chevron-left"></i> Test
+              <a href="/2019/01/25/htdp/" rel="next" title="htdp">
+                <i class="fa fa-chevron-left"></i> htdp
               </a>
             
           </div>
@@ -441,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/25/JavaString/" rel="prev" title="JavaString">
-                JavaString <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -557,6 +535,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的一些使用字符串的方法："><span class="nav-number">1.</span> <span class="nav-text">常用的一些使用字符串的方法：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
