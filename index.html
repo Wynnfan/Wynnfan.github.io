@@ -412,6 +412,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wynnfan/2019/09/08/JavaScript-重要内置函数实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wynn fan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wynnfan's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/08/JavaScript-重要内置函数实现/" itemprop="url">JavaScript 重要内置函数实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-08T23:28:50+08:00">
+                2019-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="call-函数实现"><a href="#call-函数实现" class="headerlink" title="call 函数实现"></a>call 函数实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.call = Function.prototype.call || function(context) &#123;</span><br><span class="line">    </span><br><span class="line">    context = context || window; // context 可以为 null 此时 this 指向 window</span><br><span class="line">    </span><br><span class="line">    context.fn = this;</span><br><span class="line">    </span><br><span class="line">    // 这里使用了ES6方法 获取调用 call 方法传递进来的参数 也可以直接在函数参数中添加 ...args</span><br><span class="line">    let args = Array.prototype.slice(arguments, 1);</span><br><span class="line">    </span><br><span class="line">    // 执行函数 该函数可能有返回值 需要 return 出去</span><br><span class="line">    let result = context.fn(...args); </span><br><span class="line">    </span><br><span class="line">    // ES5 实现</span><br><span class="line">    var args = [];</span><br><span class="line">    </span><br><span class="line">    for(var i = 1; i &lt; arguments.length; i++) &#123;</span><br><span class="line">        args.push(&apos;arguments[&apos; + i + &apos;]&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    var result = eval(&apos;context.fn(&apos; + args + &apos;)&apos;);</span><br><span class="line">    </span><br><span class="line">    delete context.fn;</span><br><span class="line"></span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="apply-函数实现"><a href="#apply-函数实现" class="headerlink" title="apply 函数实现"></a>apply 函数实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.apply = Function.prototype.apply || function(context, arr) &#123;</span><br><span class="line"></span><br><span class="line">    context = Object(context) || window;</span><br><span class="line">    </span><br><span class="line">    context.fn = this;</span><br><span class="line">    </span><br><span class="line">    // ES6</span><br><span class="line">    let result;</span><br><span class="line">    </span><br><span class="line">    if (!arr) &#123;</span><br><span class="line">        result = context.fn();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        result = context.fn(...arr);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // ES5 实现</span><br><span class="line">    var result;</span><br><span class="line">    </span><br><span class="line">    if (!arr) &#123;</span><br><span class="line">        result = context.fn();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        var args = [];</span><br><span class="line">        for (var i = 0, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">            args.push(&apos;arr[&apos; + i + &apos;]&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        result = eval(&apos;context.fn(&apos; + args + &apos;)&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    delete context.fn;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="bind-函数实现"><a href="#bind-函数实现" class="headerlink" title="bind 函数实现"></a>bind 函数实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.bind = Function.prototype.bind || function(context) &#123;</span><br><span class="line">	</span><br><span class="line">	// 如果 this 不是函数就报错</span><br><span class="line">    if (typeof this !== &quot;function&quot;) &#123;</span><br><span class="line">        throw new Error(&quot;Function.prototype.bind - what is trying to be bound is not callable&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    let self = this;</span><br><span class="line">	</span><br><span class="line">	// 获取 bind 时传递进来的参数</span><br><span class="line">    let args = Array.prototype.slice(arguments,1);</span><br><span class="line"></span><br><span class="line">    // 空函数 防止直接修改原型</span><br><span class="line">    let fNOP = function() &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    fNOP.prototype = this.prototype;</span><br><span class="line"></span><br><span class="line">    let fBound = function() &#123;</span><br><span class="line">    </span><br><span class="line">        // 获取 返回函数调用 时传递进来的参数</span><br><span class="line">        let bindArgs = Array.prototype.slice(arguments);</span><br><span class="line">        // 这里进行判断 this是否在空函数原型链上，即this是否是new后的实例</span><br><span class="line">        return self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	// 如果fBound作为构造函数</span><br><span class="line">	// 实例.__proto__ === fBound.prototype</span><br><span class="line">	// 而fBound.prototype.__proto__ === fNOP.prototype</span><br><span class="line">    fBound.prototype = new fNOP();</span><br><span class="line">	</span><br><span class="line">    return fBound;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="instanceof-实现"><a href="#instanceof-实现" class="headerlink" title="instanceof 实现"></a>instanceof 实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// left right 表示在instanceof 左右两边的参数</span><br><span class="line">instanceof = function(left, right) &#123;</span><br><span class="line">    left = left.__proto__;</span><br><span class="line">    right = right.prototype;</span><br><span class="line">    </span><br><span class="line">    while(true) &#123;</span><br><span class="line">        if (left === null) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if (left == right) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        left = left.__proto__;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://github.com/Wynnfan/2019/09/08/服务端渲染（SSR）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -453,6 +597,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1370,7 +1536,7 @@ int ran = r.nextInt(10); //生成一个0-9的数
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1392,7 +1558,7 @@ int ran = r.nextInt(10); //生成一个0-9的数
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
